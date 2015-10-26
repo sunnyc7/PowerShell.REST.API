@@ -131,10 +131,9 @@ namespace DynamicPowerShellApi.Owin
 		/// </returns>
 		public static IDisposable Start()
 		{
-			Uri baseAddress = WebApiConfiguration.Instance.HostAddress;
 
 			// Start OWIN host 
-			return WebApp.Start<Startup>(url: baseAddress.ToString());
+			return WebApp.Start<Startup>(WebApiConfiguration.Instance.HostAddress);
 		}
 	}
 }

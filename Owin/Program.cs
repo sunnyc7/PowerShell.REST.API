@@ -16,17 +16,17 @@
 		/// </summary>
 		static void Main()
 		{
-			Uri baseAddress = WebApiConfiguration.Instance.HostAddress;
 
 			try
 			{
-				// Start OWIN host 
-				using (WebApp.Start<Startup>(url: baseAddress.ToString()))
-				{
-					Console.WriteLine("Listening on {0}. Press any key to exit.", baseAddress);
+                // Start OWIN host 
+                using (WebApp.Start<Startup>(WebApiConfiguration.Instance.HostAddress))
+                {
+                    
+                    Console.WriteLine("Listening on {0}. Press any key to exit.", WebApiConfiguration.Instance.HostAddress);
 
-					Console.ReadLine();
-				}
+                    Console.ReadLine();
+                }
 			}
 			catch (Exception ex)
 			{

@@ -48,11 +48,11 @@
 		/// Gets the host address.
 		/// </summary>
 		[ConfigurationProperty("HostAddress", IsRequired = true)]
-		public Uri HostAddress
+		public string HostAddress
 		{
 			get
 			{
-				return (Uri)this["HostAddress"];
+				return (string)this["HostAddress"];
 			}
 		}
 
